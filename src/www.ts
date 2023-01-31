@@ -1,12 +1,11 @@
 import * as dotenv from 'dotenv';
+dotenv.config();
 import http from 'http';
 import app from './app';
 import debug from './configurations/debug';
 import AppDataSource from './data-source';
 
 debug('start');
-
-dotenv.config();
 
 
 AppDataSource.initialize()

@@ -1,10 +1,9 @@
-import { DataSource, DataSourceOptions } from "typeorm";
+import { DataSource } from "typeorm";
 import "reflect-metadata"
-import { SqliteConnectionOptions } from "typeorm/driver/sqlite/SqliteConnectionOptions";
 
 const AppDataSource: DataSource = new DataSource({
     type: "sqlite",
-    database: 'db.sql',
+    database: process.env.DATABASE,
     entities: ["src/data/entry/**/*.ts"],
     synchronize: true,
     logging: false,
